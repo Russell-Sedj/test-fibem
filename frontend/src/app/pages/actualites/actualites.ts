@@ -27,7 +27,7 @@ export class Actualites {
       titre: 'Rénovation de la place centrale – Phase 2 lancée',
       date: '5 mars 2026',
       description:
-        "Les travaux de rénovation de la place centrale de FIBEM entrent dans leur deuxième phase avec la création d'espaces verts et de zones piétonnes modernes. Cette phase sera terminée d'ici septembre 2026.",
+        "Les travaux de rénovation de la place centrale de Mbaling entrent dans leur deuxième phase avec la création d'espaces verts et de zones piétonnes modernes. Cette phase sera terminée d'ici septembre 2026.",
       categorie: 'Travaux',
       badgeClass: 'bg-orange-100 text-orange-700',
       bgClass: 'bg-gradient-to-br from-orange-400 to-orange-600',
@@ -47,7 +47,7 @@ export class Actualites {
       titre: 'Fête de printemps – 20 & 21 avril 2026',
       date: '15 février 2026',
       description:
-        'La traditionnelle fête de printemps de FIBEM aura lieu les 20 et 21 avril 2026. Concerts, animations et expositions pour toute la famille sont au programme.',
+        'La traditionnelle fête de printemps de Mbaling aura lieu les 20 et 21 avril 2026. Concerts, animations et expositions pour toute la famille sont au programme.',
       categorie: 'Événement',
       badgeClass: 'bg-purple-100 text-purple-700',
       bgClass: 'bg-gradient-to-br from-purple-400 to-purple-600',
@@ -67,7 +67,7 @@ export class Actualites {
       titre: 'Plantation de 200 arbres dans la commune',
       date: '20 janvier 2026',
       description:
-        "Dans le cadre de son plan vert, la mairie de FIBEM plante 200 arbres sur l'ensemble du territoire communal ce mois-ci. Un geste fort pour l'environnement.",
+        "Dans le cadre de son plan vert, la mairie de Mbaling plante 200 arbres sur l'ensemble du territoire communal ce mois-ci. Un geste fort pour l'environnement.",
       categorie: 'Environnement',
       badgeClass: 'bg-teal-100 text-teal-700',
       bgClass: 'bg-gradient-to-br from-teal-400 to-teal-600',
