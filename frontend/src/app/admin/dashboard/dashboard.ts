@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
@@ -61,6 +61,7 @@ export class AdminDashboard implements OnInit {
     private auth: AuthService,
     private api: ApiService,
     private router: Router,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
@@ -77,8 +78,14 @@ export class AdminDashboard implements OnInit {
   // ── Actualités ────────────────────────────────────────────────
   loadActualites() {
     this.api.getActualitesRaw().subscribe({
-      next: (data) => (this.actualites = data),
-      error: () => (this.globalError = 'Impossible de charger les actualités'),
+      next: (data) => {
+        this.actualites = data;
+        this.cdr.detectChanges();
+      },
+      error: () => {
+        this.globalError = 'Impossible de charger les actualités';
+        this.cdr.detectChanges();
+      },
     });
   }
 
@@ -124,11 +131,13 @@ export class AdminDashboard implements OnInit {
       next: () => {
         this.actuLoading = false;
         this.showActuForm = false;
+        this.cdr.detectChanges();
         this.loadActualites();
       },
       error: (err) => {
         this.actuError = err.error?.message || 'Erreur lors de la sauvegarde';
         this.actuLoading = false;
+        this.cdr.detectChanges();
       },
     });
   }
@@ -137,14 +146,20 @@ export class AdminDashboard implements OnInit {
     if (!confirm('Supprimer cette actualité ?')) return;
     this.api.deleteActualite(id).subscribe({
       next: () => this.loadActualites(),
-      error: () => (this.globalError = 'Erreur lors de la suppression'),
+      error: () => {
+        this.globalError = 'Erreur lors de la suppression';
+        this.cdr.detectChanges();
+      },
     });
   }
 
   // ── Documents ─────────────────────────────────────────────────
   loadDocuments() {
     this.api.getDocuments().subscribe({
-      next: (data) => (this.documents = data),
+      next: (data) => {
+        this.documents = data;
+        this.cdr.detectChanges();
+      },
       error: () => {},
     });
   }
@@ -176,11 +191,13 @@ export class AdminDashboard implements OnInit {
         this.showDocForm = false;
         this.docForm = { nom: '', description: '', categorie: 'Général' };
         this.selectedFile = null;
+        this.cdr.detectChanges();
         this.loadDocuments();
       },
       error: (err) => {
         this.docError = err.error?.message || "Erreur lors de l'upload";
         this.docLoading = false;
+        this.cdr.detectChanges();
       },
     });
   }
@@ -189,7 +206,10 @@ export class AdminDashboard implements OnInit {
     if (!confirm('Supprimer ce document ?')) return;
     this.api.deleteDocument(id).subscribe({
       next: () => this.loadDocuments(),
-      error: () => (this.globalError = 'Erreur lors de la suppression'),
+      error: () => {
+        this.globalError = 'Erreur lors de la suppression';
+        this.cdr.detectChanges();
+      },
     });
   }
 

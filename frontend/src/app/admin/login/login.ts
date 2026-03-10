@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
@@ -18,6 +18,7 @@ export class AdminLogin {
   constructor(
     private auth: AuthService,
     private router: Router,
+    private cdr: ChangeDetectorRef,
   ) {
     if (auth.isLoggedIn()) router.navigate(['/admin/dashboard']);
   }
@@ -34,6 +35,7 @@ export class AdminLogin {
       error: (err) => {
         this.error = err.error?.message || 'Identifiants incorrects';
         this.loading = false;
+        this.cdr.detectChanges();
       },
     });
   }
