@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
 interface Actualite {
   id: number;
@@ -17,7 +18,26 @@ interface Actualite {
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
+export class Home implements OnInit {
+  constructor(
+    private title: Title,
+    private meta: Meta,
+  ) {}
+
+  ngOnInit() {
+    this.title.setTitle('Mairie de Mbaling - Site Officiel');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Site officiel de la mairie de Mbaling, Sénégal. Découvrez les services municipaux, les actualités et les démarches administratives.',
+    });
+    this.meta.updateTag({ property: 'og:title', content: 'Mairie de Mbaling - Site Officiel' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Site officiel de la mairie de Mbaling, Sénégal.',
+    });
+    this.meta.updateTag({ property: 'og:url', content: 'https://www.mairie-mbaling.sn/' });
+  }
   actualites: Actualite[] = [
     {
       id: 1,

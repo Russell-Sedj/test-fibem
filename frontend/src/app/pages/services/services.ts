@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
 interface Service {
   titre: string;
@@ -16,7 +17,29 @@ interface Service {
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
-export class Services {
+export class Services implements OnInit {
+  constructor(
+    private title: Title,
+    private meta: Meta,
+  ) {}
+
+  ngOnInit() {
+    this.title.setTitle('Services Municipaux - Mairie de Mbaling');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'État civil, urbanisme, éducation, culture, sport, environnement : découvrez tous les services proposés par la mairie de Mbaling.',
+    });
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Services Municipaux - Mairie de Mbaling',
+    });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Tous les services de la mairie de Mbaling, Sénégal.',
+    });
+    this.meta.updateTag({ property: 'og:url', content: 'https://www.mairie-mbaling.sn/services' });
+  }
   services: Service[] = [
     {
       titre: 'État civil',

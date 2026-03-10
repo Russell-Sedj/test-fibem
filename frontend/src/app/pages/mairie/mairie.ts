@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-mairie',
@@ -7,24 +8,43 @@ import { RouterLink } from '@angular/router';
   templateUrl: './mairie.html',
   styleUrl: './mairie.css',
 })
-export class Mairie {
+export class Mairie implements OnInit {
+  constructor(
+    private title: Title,
+    private meta: Meta,
+  ) {}
+
+  ngOnInit() {
+    this.title.setTitle('La Mairie - Mairie de Mbaling');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        "Découvrez la mairie de Mbaling : le conseil municipal, le mot du maire Pape Da, l'histoire et les chiffres clés de la commune.",
+    });
+    this.meta.updateTag({ property: 'og:title', content: 'La Mairie - Mairie de Mbaling' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Conseil municipal, histoire et missions de la mairie de Mbaling, Sénégal.',
+    });
+    this.meta.updateTag({ property: 'og:url', content: 'https://www.mairie-mbaling.sn/mairie' });
+  }
   conseillers = [
     {
-      nom: 'Marie Dupont',
+      nom: 'Pape Da',
       role: 'Maire',
       responsabilite: 'Administration générale, finances, sécurité',
     },
     {
-      nom: 'Jean-Pierre Martin',
+      nom: 'Geralt de Riv',
       role: '1er Adjoint',
       responsabilite: 'Urbanisme & travaux publics',
     },
-    { nom: 'Sophie Bernard', role: '2e Adjointe', responsabilite: 'Éducation & jeunesse' },
-    { nom: 'Alain Rousseau', role: '3e Adjoint', responsabilite: 'Culture, sport & associations' },
-    { nom: 'Isabelle Lambert', role: '4e Adjointe', responsabilite: 'Solidarités & santé' },
+    { nom: 'Yennefer Doe', role: '2e Adjointe', responsabilite: 'Éducation & jeunesse' },
+    { nom: 'Bojack Horseman', role: '3e Adjoint', responsabilite: 'Culture, sport & associations' },
+    { nom: 'Rick Garfield', role: '4e Adjoint', responsabilite: 'Solidarités & santé' },
     {
-      nom: 'Thomas Leroy',
-      role: '5e Adjoint',
+      nom: "Jeanne d'Arc",
+      role: '5e Adjointe',
       responsabilite: 'Environnement & développement durable',
     },
   ];
@@ -32,7 +52,7 @@ export class Mairie {
   chiffres = [
     { value: '12 500', label: 'Habitants' },
     { value: '38 km²', label: 'Superficie' },
-    { value: '1842', label: 'Année de création' },
+    { value: '1969', label: 'Année de création' },
     { value: '35', label: 'Associations' },
   ];
 }

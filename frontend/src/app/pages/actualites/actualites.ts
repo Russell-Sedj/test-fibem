@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 interface Actualite {
   id: number;
@@ -13,13 +15,37 @@ interface Actualite {
 
 @Component({
   selector: 'app-actualites',
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule],
   templateUrl: './actualites.html',
   styleUrl: './actualites.css',
 })
-export class Actualites {
+export class Actualites implements OnInit {
   categories = ['Toutes', 'Travaux', 'Éducation', 'Événement', 'Institution', 'Environnement'];
   selectedCategorie = 'Toutes';
+  searchQuery = '';
+
+  constructor(
+    private title: Title,
+    private meta: Meta,
+  ) {}
+
+  ngOnInit() {
+    this.title.setTitle('Actualités - Mairie de Mbaling');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Toutes les actualités de la commune de Mbaling : travaux, événements, décisions municipales, environnement et éducation.',
+    });
+    this.meta.updateTag({ property: 'og:title', content: 'Actualités - Mairie de Mbaling' });
+    this.meta.updateTag({
+      property: 'og:description',
+      content: 'Actualités municipales de Mbaling, Sénégal.',
+    });
+    this.meta.updateTag({
+      property: 'og:url',
+      content: 'https://www.mairie-mbaling.sn/actualites',
+    });
+  }
 
   allActualites: Actualite[] = [
     {
@@ -85,11 +111,21 @@ export class Actualites {
   ];
 
   get filteredActualites(): Actualite[] {
-    if (this.selectedCategorie === 'Toutes') return this.allActualites;
-    return this.allActualites.filter((a) => a.categorie === this.selectedCategorie);
+    let result = this.allActualites;
+    if (this.selectedCategorie !== 'Toutes') {
+      result = result.filter((a) => a.categorie === this.selectedCategorie);
+    }
+    const q = this.searchQuery.trim().toLowerCase();
+    if (q) {
+      result = result.filter(
+        (a) => a.titre.toLowerCase().includes(q) || a.description.toLowerCase().includes(q),
+      );
+    }
+    return result;
   }
 
   selectCategorie(cat: string) {
     this.selectedCategorie = cat;
+    this.searchQuery = '';
   }
 }
