@@ -43,7 +43,7 @@
         class="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm flex justify-between"
       >
         {{ globalError }}
-        <button (click)="globalError = ''" class="font-bold">�o.</button>
+        <button (click)="globalError = ''" class="font-bold">×</button>
       </div>
     }
 
@@ -84,7 +84,7 @@
       </button>
     </div>
 
-    <!-- ===== ONGLET ACTUALIT�?S ===== -->
+    <!-- ===== ONGLET ACTUALITÉS ===== -->
     @if (activeTab === 'actualites') {
       <div class="space-y-6">
         <div class="flex items-center justify-between">
@@ -212,7 +212,7 @@
         <div class="flex items-center justify-between">
           <div>
             <h2 class="text-xl font-bold text-gray-900">Conseil municipal</h2>
-            <p class="text-gray-500 text-sm mt-0.5">Le Maire et ses adjoints �?" apparaissent sur la page "La Mairie"</p>
+            <p class="text-gray-500 text-sm mt-0.5">Le Maire et ses adjoints – apparaissent sur la page "La Mairie"</p>
           </div>
           <button
             (click)="openCreateConse()"
@@ -248,7 +248,7 @@
                   [(ngModel)]="conseForm.role"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : Maire, 1er Adjoint, 2e Adjointe�?�"
+                  placeholder="ex : Maire, 1er Adjoint, 2e Adjointe..."
                 />
               </div>
               <div>
@@ -363,7 +363,7 @@
                   [(ngModel)]="servForm.titre"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : �?tat civil"
+                  placeholder="ex : État civil"
                 />
               </div>
               <div>

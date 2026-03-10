@@ -65,12 +65,12 @@ export class ApiService {
     return new HttpHeaders({ Authorization: `Bearer ${this.auth.getToken()}` });
   }
 
-  // �"?�"? Contact �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
+  // -- Contact --
   sendContact(data: { nom: string; email: string; sujet: string; message: string }) {
     return this.http.post<{ message: string }>(`${this.base}/contact`, data);
   }
 
-  // �"?�"? Actualités (public �?" camelCase pour les templates) �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
+  // -- Actualites (public - camelCase pour les templates) --
   getActualites() {
     return this.http.get<ActualiteRaw[]>(`${this.base}/actualites`).pipe(
       map((rows) =>
@@ -87,7 +87,7 @@ export class ApiService {
     );
   }
 
-  // �"?�"? Actualités (admin �?" snake_case brut) �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
+  // -- Actualites (admin - snake_case brut) --
   getActualitesRaw() {
     return this.http.get<ActualiteRaw[]>(`${this.base}/actualites`);
   }
@@ -110,12 +110,12 @@ export class ApiService {
     });
   }
 
-  // �"?�"? Documents (public �?" téléchargement seulement) �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
+  // -- Documents (public - telechargement seulement) --
   documentDownloadUrl(id: number) {
     return `${this.base}/documents/${id}/download`;
   }
 
-  // �"?�"? Conseillers �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
+  // -- Conseillers --
   getConseillers() {
     return this.http.get<Conseiller[]>(`${this.base}/conseillers`);
   }
@@ -138,7 +138,7 @@ export class ApiService {
     });
   }
 
-  // ?? Services ??????????????????????????????????????????????????
+  // -- Services --
   getServices() {
     return this.http.get<Service[]>(`${this.base}/services`);
   }
