@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,6 +14,8 @@ export class Contact implements OnInit {
   form: FormGroup;
   submitted = false;
   success = false;
+  sending = false;
+  apiError = '';
 
   sujets = [
     'État civil',
@@ -28,6 +31,7 @@ export class Contact implements OnInit {
     private fb: FormBuilder,
     private title: Title,
     private meta: Meta,
+    private api: ApiService,
   ) {
     this.form = this.fb.group({
       nom: ['', [Validators.required, Validators.minLength(2)]],
@@ -59,10 +63,21 @@ export class Contact implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.apiError = '';
     if (this.form.invalid) return;
-    // Simulation of form submission
-    this.success = true;
-    this.form.reset();
-    this.submitted = false;
+    this.sending = true;
+    const { nom, email, sujet, message } = this.form.value;
+    this.api.sendContact({ nom, email, sujet, message }).subscribe({
+      next: () => {
+        this.success = true;
+        this.sending = false;
+        this.form.reset();
+        this.submitted = false;
+      },
+      error: (err) => {
+        this.apiError = err.error?.message || 'Une erreur est survenue. Veuillez réessayer.';
+        this.sending = false;
+      },
+    });
   }
 }

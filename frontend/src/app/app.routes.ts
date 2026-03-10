@@ -11,5 +11,9 @@ export const routes: Routes = [
   { path: 'services', component: Services },
   { path: 'actualites', component: Actualites },
   { path: 'contact', component: Contact },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.routes').then((m) => m.adminRoutes),
+  },
   { path: '**', redirectTo: '' },
 ];

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Title, Meta } from '@angular/platform-browser';
+import { ApiService } from '../../services/api.service';
 
 interface Actualite {
   id: number;
@@ -20,6 +22,7 @@ interface Actualite {
   styleUrl: './actualites.css',
 })
 export class Actualites implements OnInit {
+  private platformId = inject(PLATFORM_ID);
   categories = ['Toutes', 'Travaux', 'Éducation', 'Événement', 'Institution', 'Environnement'];
   selectedCategorie = 'Toutes';
   searchQuery = '';
@@ -27,6 +30,7 @@ export class Actualites implements OnInit {
   constructor(
     private title: Title,
     private meta: Meta,
+    private api: ApiService,
   ) {}
 
   ngOnInit() {
@@ -45,6 +49,15 @@ export class Actualites implements OnInit {
       property: 'og:url',
       content: 'https://www.mairie-mbaling.sn/actualites',
     });
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.api.getActualites().subscribe({
+        next: (data) => (this.allActualites = data),
+        error: () => {
+          /* garde les données statiques */
+        },
+      });
+    }
   }
 
   allActualites: Actualite[] = [

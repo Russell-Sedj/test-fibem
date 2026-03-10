@@ -1,7 +1,8 @@
 import { Component, afterNextRender } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,13 @@ import { Footer } from './components/footer/footer';
   styleUrl: './app.css',
 })
 export class App {
-  constructor() {
+  isAdmin = false;
+
+  constructor(router: Router) {
+    router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((e) => {
+      this.isAdmin = (e as NavigationEnd).urlAfterRedirects.startsWith('/admin');
+    });
+
     afterNextRender(() => {
       import('aos').then(({ default: AOS }) => {
         AOS.init({
