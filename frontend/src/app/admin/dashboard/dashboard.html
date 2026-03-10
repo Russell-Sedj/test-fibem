@@ -30,7 +30,7 @@
         (click)="logout()"
         class="bg-blue-800 hover:bg-blue-700 px-4 py-1.5 rounded-lg text-sm font-medium transition"
       >
-        DÃ©connexion
+        Déconnexion
       </button>
     </div>
   </header>
@@ -43,7 +43,7 @@
         class="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm flex justify-between"
       >
         {{ globalError }}
-        <button (click)="globalError = ''" class="font-bold">âœ•</button>
+        <button (click)="globalError = ''" class="font-bold">�o.</button>
       </div>
     }
 
@@ -58,7 +58,7 @@
         [class.text-gray-600]="activeTab !== 'actualites'"
         [class.shadow]="activeTab !== 'actualites'"
       >
-        ðŸ“° ActualitÃ©s ({{ actualites.length }})
+        📰 Actualités ({{ actualites.length }})
       </button>
       <button
         (click)="activeTab = 'conseillers'"
@@ -69,7 +69,7 @@
         [class.text-gray-600]="activeTab !== 'conseillers'"
         [class.shadow]="activeTab !== 'conseillers'"
       >
-        ðŸ‘¥ Conseil ({{ conseillers.length }})
+        👥 Conseil ({{ conseillers.length }})
       </button>
       <button
         (click)="activeTab = 'services'"
@@ -80,27 +80,27 @@
         [class.text-gray-600]="activeTab !== 'services'"
         [class.shadow]="activeTab !== 'services'"
       >
-        ðŸ›ï¸ Services ({{ services.length }})
+        🏛️ Services ({{ services.length }})
       </button>
     </div>
 
-    <!-- ===== ONGLET ACTUALITÃ‰S ===== -->
+    <!-- ===== ONGLET ACTUALIT�?S ===== -->
     @if (activeTab === 'actualites') {
       <div class="space-y-6">
         <div class="flex items-center justify-between">
-          <h2 class="text-xl font-bold text-gray-900">Gestion des actualitÃ©s</h2>
+          <h2 class="text-xl font-bold text-gray-900">Gestion des actualités</h2>
           <button
             (click)="openCreateActu()"
             class="bg-blue-800 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-blue-900 transition flex items-center gap-2"
           >
-            <span class="text-lg leading-none">+</span> Nouvelle actualitÃ©
+            <span class="text-lg leading-none">+</span> Nouvelle actualité
           </button>
         </div>
 
         @if (showActuForm) {
           <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h3 class="font-bold text-gray-900 mb-5 text-lg">
-              {{ editingActu ? "Modifier l'actualitÃ©" : 'Nouvelle actualitÃ©' }}
+              {{ editingActu ? "Modifier l'actualité" : 'Nouvelle actualité' }}
             </h3>
             @if (actuError) {
               <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
@@ -114,11 +114,11 @@
                   [(ngModel)]="actuForm.titre"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="Titre de l'actualitÃ©"
+                  placeholder="Titre de l'actualité"
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">CatÃ©gorie</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
                 <select
                   [(ngModel)]="actuForm.categorie"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition bg-white"
@@ -143,7 +143,7 @@
                   [(ngModel)]="actuForm.description"
                   rows="4"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none"
-                  placeholder="Texte de l'actualitÃ©..."
+                  placeholder="Texte de l'actualité..."
                 ></textarea>
               </div>
             </div>
@@ -168,15 +168,15 @@
         <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           @if (actualites.length === 0) {
             <div class="text-center py-16 text-gray-400">
-              <p class="text-lg font-semibold">Aucune actualitÃ©</p>
-              <p class="text-sm mt-1">Cliquez sur "Nouvelle actualitÃ©" pour commencer</p>
+              <p class="text-lg font-semibold">Aucune actualité</p>
+              <p class="text-sm mt-1">Cliquez sur "Nouvelle actualité" pour commencer</p>
             </div>
           } @else {
             <table class="w-full text-sm">
               <thead class="bg-slate-50 border-b border-gray-100">
                 <tr>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Titre</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">CatÃ©gorie</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Catégorie</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Date</th>
                   <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
                 </tr>
@@ -212,7 +212,7 @@
         <div class="flex items-center justify-between">
           <div>
             <h2 class="text-xl font-bold text-gray-900">Conseil municipal</h2>
-            <p class="text-gray-500 text-sm mt-0.5">Le Maire et ses adjoints â€” apparaissent sur la page "La Mairie"</p>
+            <p class="text-gray-500 text-sm mt-0.5">Le Maire et ses adjoints �?" apparaissent sur la page "La Mairie"</p>
           </div>
           <button
             (click)="openCreateConse()"
@@ -243,16 +243,16 @@
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">RÃ´le *</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Rôle *</label>
                 <input
                   [(ngModel)]="conseForm.role"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : Maire, 1er Adjoint, 2e Adjointeâ€¦"
+                  placeholder="ex : Maire, 1er Adjoint, 2e Adjointe�?�"
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">ResponsabilitÃ©</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Responsabilité</label>
                 <input
                   [(ngModel)]="conseForm.responsabilite"
                   type="text"
@@ -301,8 +301,8 @@
                 <tr>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 w-8">#</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Nom</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">RÃ´le</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">ResponsabilitÃ©</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Rôle</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Responsabilité</th>
                   <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
                 </tr>
               </thead>
@@ -363,11 +363,11 @@
                   [(ngModel)]="servForm.titre"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : Ã‰tat civil"
+                  placeholder="ex : �?tat civil"
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Couleur du thÃ¨me</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Couleur du thème</label>
                 <select
                   [(ngModel)]="servForm.theme"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition bg-white"
@@ -388,13 +388,13 @@
               </div>
               <div class="md:col-span-2">
                 <label class="block text-sm font-medium text-gray-700 mb-1">
-                  DÃ©tails <span class="text-gray-400 font-normal">(un Ã©lÃ©ment par ligne)</span>
+                  Détails <span class="text-gray-400 font-normal">(un élément par ligne)</span>
                 </label>
                 <textarea
                   [(ngModel)]="servForm.detailsText"
                   rows="6"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none font-mono text-sm"
-                  placeholder="DÃ©claration de naissance&#10;Mariage civil&#10;Copies et extraits d'actes"
+                  placeholder="Déclaration de naissance&#10;Mariage civil&#10;Copies et extraits d'actes"
                 ></textarea>
               </div>
             </div>
@@ -428,7 +428,7 @@
                 <tr>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Titre</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Description</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">DÃ©tails</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Détails</th>
                   <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
                 </tr>
               </thead>
@@ -442,7 +442,7 @@
                       </div>
                     </td>
                     <td class="px-5 py-4 text-gray-500 hidden sm:table-cell max-w-xs truncate">{{ s.description }}</td>
-                    <td class="px-5 py-4 text-gray-400 hidden md:table-cell text-xs">{{ s.details.length }} Ã©lÃ©ment(s)</td>
+                    <td class="px-5 py-4 text-gray-400 hidden md:table-cell text-xs">{{ s.details.length }} élément(s)</td>
                     <td class="px-5 py-4 text-right">
                       <div class="flex items-center justify-end gap-2">
                         <button (click)="openEditServ(s)" class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100 transition">Modifier</button>

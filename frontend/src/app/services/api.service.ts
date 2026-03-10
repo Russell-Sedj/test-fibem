@@ -65,12 +65,12 @@ export class ApiService {
     return new HttpHeaders({ Authorization: `Bearer ${this.auth.getToken()}` });
   }
 
-  // â”€â”€ Contact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // �"?�"? Contact �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
   sendContact(data: { nom: string; email: string; sujet: string; message: string }) {
     return this.http.post<{ message: string }>(`${this.base}/contact`, data);
   }
 
-  // â”€â”€ ActualitÃ©s (public â€” camelCase pour les templates) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // �"?�"? Actualités (public �?" camelCase pour les templates) �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
   getActualites() {
     return this.http.get<ActualiteRaw[]>(`${this.base}/actualites`).pipe(
       map((rows) =>
@@ -87,7 +87,7 @@ export class ApiService {
     );
   }
 
-  // â”€â”€ ActualitÃ©s (admin â€” snake_case brut) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // �"?�"? Actualités (admin �?" snake_case brut) �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
   getActualitesRaw() {
     return this.http.get<ActualiteRaw[]>(`${this.base}/actualites`);
   }
@@ -110,12 +110,12 @@ export class ApiService {
     });
   }
 
-  // â”€â”€ Documents (public â€” tÃ©lÃ©chargement seulement) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // �"?�"? Documents (public �?" téléchargement seulement) �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
   documentDownloadUrl(id: number) {
     return `${this.base}/documents/${id}/download`;
   }
 
-  // â”€â”€ Conseillers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // �"?�"? Conseillers �"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?�"?
   getConseillers() {
     return this.http.get<Conseiller[]>(`${this.base}/conseillers`);
   }
@@ -138,7 +138,7 @@ export class ApiService {
     });
   }
 
-  // ── Services ──────────────────────────────────────────────────
+  // ?? Services ??????????????????????????????????????????????????
   getServices() {
     return this.http.get<Service[]>(`${this.base}/services`);
   }

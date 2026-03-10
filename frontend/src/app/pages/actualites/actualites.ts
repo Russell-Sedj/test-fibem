@@ -63,7 +63,7 @@ export class Actualites implements OnInit {
   allActualites: Actualite[] = [
     {
       id: 1,
-      titre: 'Rénovation de la place centrale – Phase 2 lancée',
+      titre: 'Rénovation de la place centrale - Phase 2 lancée',
       date: '5 mars 2026',
       description:
         "Les travaux de rénovation de la place centrale de Mbaling entrent dans leur deuxième phase avec la création d'espaces verts et de zones piétonnes modernes. Cette phase sera terminée d'ici septembre 2026.",
@@ -83,7 +83,7 @@ export class Actualites implements OnInit {
     },
     {
       id: 3,
-      titre: 'Fête de printemps – 20 & 21 avril 2026',
+      titre: 'Fête de printemps - 20 & 21 avril 2026',
       date: '15 février 2026',
       description:
         'La traditionnelle fête de printemps de Mbaling aura lieu les 20 et 21 avril 2026. Concerts, animations et expositions pour toute la famille sont au programme.',

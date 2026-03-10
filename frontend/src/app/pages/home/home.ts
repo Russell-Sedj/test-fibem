@@ -41,7 +41,7 @@ export class Home implements OnInit {
   actualites: Actualite[] = [
     {
       id: 1,
-      titre: 'Rénovation de la place centrale – Phase 2 lancée',
+      titre: 'Rénovation de la place centrale - Phase 2 lancée',
       date: '5 mars 2026',
       resume:
         "Les travaux de rénovation de la place centrale entrent dans leur deuxième phase avec la création d'espaces verts et de zones piétonnes modernes.",
@@ -54,14 +54,14 @@ export class Home implements OnInit {
       titre: 'Inscriptions scolaires 2026-2027 ouvertes',
       date: '28 février 2026',
       resume:
-        "Les inscriptions pour l'année scolaire 2026–2027 sont désormais ouvertes. Rendez-vous en mairie ou sur notre portail en ligne.",
+        "Les inscriptions pour l'année scolaire 2026-2027 sont désormais ouvertes. Rendez-vous en mairie ou sur notre portail en ligne.",
       categorie: 'Éducation',
       badgeClass: 'bg-green-100 text-green-700',
       bgClass: 'bg-gradient-to-br from-green-400 to-green-600',
     },
     {
       id: 3,
-      titre: 'Fête de printemps – 20 & 21 avril 2026',
+      titre: 'Fête de printemps - 20 & 21 avril 2026',
       date: '15 février 2026',
       resume:
         'La traditionnelle fête de printemps aura lieu les 20 et 21 avril. Concerts, animations et expositions pour toute la famille.',
