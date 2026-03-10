@@ -39,7 +39,7 @@ export class Mairie implements OnInit {
       role: '1er Adjoint',
       responsabilite: 'Urbanisme & travaux publics',
     },
-    { nom: 'Yennefer Doe', role: '2e Adjointe', responsabilite: 'Éducation & jeunesse' },
+    { nom: 'Yennefer', role: '2e Adjointe', responsabilite: 'Éducation & jeunesse' },
     { nom: 'Bojack Horseman', role: '3e Adjoint', responsabilite: 'Culture, sport & associations' },
     { nom: 'Rick Garfield', role: '4e Adjoint', responsabilite: 'Solidarités & santé' },
     {
