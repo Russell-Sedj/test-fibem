@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-slate-100 flex flex-col">
+﻿<div class="min-h-screen bg-slate-100 flex flex-col">
   <!-- Top bar -->
   <header
     class="bg-blue-900 text-white h-16 flex items-center justify-between px-6 shadow-lg shrink-0"
@@ -30,7 +30,7 @@
         (click)="logout()"
         class="bg-blue-800 hover:bg-blue-700 px-4 py-1.5 rounded-lg text-sm font-medium transition"
       >
-        Déconnexion
+        DÃ©connexion
       </button>
     </div>
   </header>
@@ -43,7 +43,7 @@
         class="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm flex justify-between"
       >
         {{ globalError }}
-        <button (click)="globalError = ''" class="font-bold">✕</button>
+        <button (click)="globalError = ''" class="font-bold">âœ•</button>
       </div>
     }
 
@@ -58,7 +58,7 @@
         [class.text-gray-600]="activeTab !== 'actualites'"
         [class.shadow]="activeTab !== 'actualites'"
       >
-        📰 Actualités ({{ actualites.length }})
+        ðŸ“° ActualitÃ©s ({{ actualites.length }})
       </button>
       <button
         (click)="activeTab = 'conseillers'"
@@ -69,7 +69,7 @@
         [class.text-gray-600]="activeTab !== 'conseillers'"
         [class.shadow]="activeTab !== 'conseillers'"
       >
-        👥 Conseil ({{ conseillers.length }})
+        ðŸ‘¥ Conseil ({{ conseillers.length }})
       </button>
       <button
         (click)="activeTab = 'services'"
@@ -80,27 +80,27 @@
         [class.text-gray-600]="activeTab !== 'services'"
         [class.shadow]="activeTab !== 'services'"
       >
-        🏛️ Services ({{ services.length }})
+        ðŸ›ï¸ Services ({{ services.length }})
       </button>
     </div>
 
-    <!-- ===== ONGLET ACTUALITÉS ===== -->
+    <!-- ===== ONGLET ACTUALITÃ‰S ===== -->
     @if (activeTab === 'actualites') {
       <div class="space-y-6">
         <div class="flex items-center justify-between">
-          <h2 class="text-xl font-bold text-gray-900">Gestion des actualités</h2>
+          <h2 class="text-xl font-bold text-gray-900">Gestion des actualitÃ©s</h2>
           <button
             (click)="openCreateActu()"
             class="bg-blue-800 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-blue-900 transition flex items-center gap-2"
           >
-            <span class="text-lg leading-none">+</span> Nouvelle actualité
+            <span class="text-lg leading-none">+</span> Nouvelle actualitÃ©
           </button>
         </div>
 
         @if (showActuForm) {
           <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <h3 class="font-bold text-gray-900 mb-5 text-lg">
-              {{ editingActu ? "Modifier l'actualité" : 'Nouvelle actualité' }}
+              {{ editingActu ? "Modifier l'actualitÃ©" : 'Nouvelle actualitÃ©' }}
             </h3>
             @if (actuError) {
               <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
@@ -114,11 +114,11 @@
                   [(ngModel)]="actuForm.titre"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="Titre de l'actualité"
+                  placeholder="Titre de l'actualitÃ©"
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">CatÃ©gorie</label>
                 <select
                   [(ngModel)]="actuForm.categorie"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition bg-white"
@@ -143,7 +143,7 @@
                   [(ngModel)]="actuForm.description"
                   rows="4"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none"
-                  placeholder="Texte de l'actualité..."
+                  placeholder="Texte de l'actualitÃ©..."
                 ></textarea>
               </div>
             </div>
@@ -168,15 +168,15 @@
         <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           @if (actualites.length === 0) {
             <div class="text-center py-16 text-gray-400">
-              <p class="text-lg font-semibold">Aucune actualité</p>
-              <p class="text-sm mt-1">Cliquez sur "Nouvelle actualité" pour commencer</p>
+              <p class="text-lg font-semibold">Aucune actualitÃ©</p>
+              <p class="text-sm mt-1">Cliquez sur "Nouvelle actualitÃ©" pour commencer</p>
             </div>
           } @else {
             <table class="w-full text-sm">
               <thead class="bg-slate-50 border-b border-gray-100">
                 <tr>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Titre</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Catégorie</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">CatÃ©gorie</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Date</th>
                   <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
                 </tr>
@@ -212,7 +212,7 @@
         <div class="flex items-center justify-between">
           <div>
             <h2 class="text-xl font-bold text-gray-900">Conseil municipal</h2>
-            <p class="text-gray-500 text-sm mt-0.5">Le Maire et ses adjoints — apparaissent sur la page "La Mairie"</p>
+            <p class="text-gray-500 text-sm mt-0.5">Le Maire et ses adjoints â€” apparaissent sur la page "La Mairie"</p>
           </div>
           <button
             (click)="openCreateConse()"
@@ -243,16 +243,16 @@
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Rôle *</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">RÃ´le *</label>
                 <input
                   [(ngModel)]="conseForm.role"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : Maire, 1er Adjoint, 2e Adjointe…"
+                  placeholder="ex : Maire, 1er Adjoint, 2e Adjointeâ€¦"
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Responsabilité</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">ResponsabilitÃ©</label>
                 <input
                   [(ngModel)]="conseForm.responsabilite"
                   type="text"
@@ -301,8 +301,8 @@
                 <tr>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 w-8">#</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Nom</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Rôle</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Responsabilité</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">RÃ´le</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">ResponsabilitÃ©</th>
                   <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
                 </tr>
               </thead>
@@ -363,11 +363,11 @@
                   [(ngModel)]="servForm.titre"
                   type="text"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : État civil"
+                  placeholder="ex : Ã‰tat civil"
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Couleur du thème</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Couleur du thÃ¨me</label>
                 <select
                   [(ngModel)]="servForm.theme"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition bg-white"
@@ -388,13 +388,13 @@
               </div>
               <div class="md:col-span-2">
                 <label class="block text-sm font-medium text-gray-700 mb-1">
-                  Détails <span class="text-gray-400 font-normal">(un élément par ligne)</span>
+                  DÃ©tails <span class="text-gray-400 font-normal">(un Ã©lÃ©ment par ligne)</span>
                 </label>
                 <textarea
                   [(ngModel)]="servForm.detailsText"
                   rows="6"
                   class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none font-mono text-sm"
-                  placeholder="Déclaration de naissance&#10;Mariage civil&#10;Copies et extraits d'actes"
+                  placeholder="DÃ©claration de naissance&#10;Mariage civil&#10;Copies et extraits d'actes"
                 ></textarea>
               </div>
             </div>
@@ -428,7 +428,7 @@
                 <tr>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Titre</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Description</th>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Détails</th>
+                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">DÃ©tails</th>
                   <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
                 </tr>
               </thead>
@@ -442,396 +442,11 @@
                       </div>
                     </td>
                     <td class="px-5 py-4 text-gray-500 hidden sm:table-cell max-w-xs truncate">{{ s.description }}</td>
-                    <td class="px-5 py-4 text-gray-400 hidden md:table-cell text-xs">{{ s.details.length }} élément(s)</td>
+                    <td class="px-5 py-4 text-gray-400 hidden md:table-cell text-xs">{{ s.details.length }} Ã©lÃ©ment(s)</td>
                     <td class="px-5 py-4 text-right">
                       <div class="flex items-center justify-end gap-2">
                         <button (click)="openEditServ(s)" class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100 transition">Modifier</button>
                         <button (click)="deleteServ(s.id)" class="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-semibold hover:bg-red-100 transition">Supprimer</button>
-                      </div>
-                    </td>
-                  </tr>
-                }
-              </tbody>
-            </table>
-          }
-        </div>
-      </div>
-    }
-  </div>
-</div>
-
-  <!-- Top bar -->
-  <header
-    class="bg-blue-900 text-white h-16 flex items-center justify-between px-6 shadow-lg shrink-0"
-  >
-    <div class="flex items-center gap-3">
-      <img src="assets/images/fibem_logo.jpg" alt="Logo" class="h-9 w-auto rounded-lg" />
-      <div>
-        <p class="font-bold leading-none">Dashboard Admin</p>
-        <p class="text-blue-300 text-xs mt-0.5">Mairie de Mbaling</p>
-      </div>
-    </div>
-    <div class="flex items-center gap-4">
-      <a
-        routerLink="/"
-        target="_blank"
-        class="text-blue-300 hover:text-white text-sm transition flex items-center gap-1"
-      >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-          />
-        </svg>
-        Site public
-      </a>
-      <button
-        (click)="logout()"
-        class="bg-blue-800 hover:bg-blue-700 px-4 py-1.5 rounded-lg text-sm font-medium transition"
-      >
-        Déconnexion
-      </button>
-    </div>
-  </header>
-
-  <!-- Contenu principal -->
-  <div class="flex-1 max-w-6xl w-full mx-auto px-4 py-8">
-    <!-- Erreur globale -->
-    @if (globalError) {
-      <div
-        class="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm flex justify-between"
-      >
-        {{ globalError }}
-        <button (click)="globalError = ''" class="font-bold">✕</button>
-      </div>
-    }
-
-    <!-- Onglets -->
-    <div class="flex gap-2 mb-6">
-      <button
-        (click)="activeTab = 'actualites'"
-        class="px-5 py-2.5 rounded-xl font-semibold text-sm transition"
-        [class.bg-blue-800]="activeTab === 'actualites'"
-        [class.text-white]="activeTab === 'actualites'"
-        [class.bg-white]="activeTab !== 'actualites'"
-        [class.text-gray-600]="activeTab !== 'actualites'"
-        [class.shadow]="activeTab !== 'actualites'"
-      >
-        📰 Actualités ({{ actualites.length }})
-      </button>
-      <button
-        (click)="activeTab = 'documents'"
-        class="px-5 py-2.5 rounded-xl font-semibold text-sm transition"
-        [class.bg-blue-800]="activeTab === 'documents'"
-        [class.text-white]="activeTab === 'documents'"
-        [class.bg-white]="activeTab !== 'documents'"
-        [class.text-gray-600]="activeTab !== 'documents'"
-        [class.shadow]="activeTab !== 'documents'"
-      >
-        📄 Documents ({{ documents.length }})
-      </button>
-    </div>
-
-    <!-- ===== ONGLET ACTUALITÉS ===== -->
-    @if (activeTab === 'actualites') {
-      <div class="space-y-6">
-        <!-- En-tête + bouton -->
-        <div class="flex items-center justify-between">
-          <h2 class="text-xl font-bold text-gray-900">Gestion des actualités</h2>
-          <button
-            (click)="openCreateActu()"
-            class="bg-blue-800 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-blue-900 transition flex items-center gap-2"
-          >
-            <span class="text-lg leading-none">+</span> Nouvelle actualité
-          </button>
-        </div>
-
-        <!-- Formulaire créer / modifier -->
-        @if (showActuForm) {
-          <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-            <h3 class="font-bold text-gray-900 mb-5 text-lg">
-              {{ editingActu ? "Modifier l'actualité" : 'Nouvelle actualité' }}
-            </h3>
-
-            @if (actuError) {
-              <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
-                {{ actuError }}
-              </div>
-            }
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium text-gray-700 mb-1">Titre *</label>
-                <input
-                  [(ngModel)]="actuForm.titre"
-                  type="text"
-                  class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="Titre de l'actualité"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
-                <select
-                  [(ngModel)]="actuForm.categorie"
-                  class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition bg-white"
-                >
-                  @for (cat of categories; track cat) {
-                    <option [value]="cat">{{ cat }}</option>
-                  }
-                </select>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Date *</label>
-                <input
-                  [(ngModel)]="actuForm.date"
-                  type="text"
-                  class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : 10 mars 2026"
-                />
-              </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium text-gray-700 mb-1">Description *</label>
-                <textarea
-                  [(ngModel)]="actuForm.description"
-                  rows="4"
-                  class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition resize-none"
-                  placeholder="Texte de l'actualité..."
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="flex gap-3 mt-5">
-              <button
-                (click)="saveActu()"
-                [disabled]="actuLoading"
-                class="bg-blue-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-blue-900 transition disabled:opacity-60"
-              >
-                {{ actuLoading ? 'Sauvegarde...' : editingActu ? 'Enregistrer' : 'Publier' }}
-              </button>
-              <button
-                (click)="showActuForm = false"
-                class="bg-gray-100 text-gray-700 px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-gray-200 transition"
-              >
-                Annuler
-              </button>
-            </div>
-          </div>
-        }
-
-        <!-- Tableau actualités -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          @if (actualites.length === 0) {
-            <div class="text-center py-16 text-gray-400">
-              <p class="text-lg font-semibold">Aucune actualité</p>
-              <p class="text-sm mt-1">Cliquez sur "Nouvelle actualité" pour commencer</p>
-            </div>
-          } @else {
-            <table class="w-full text-sm">
-              <thead class="bg-slate-50 border-b border-gray-100">
-                <tr>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Titre</th>
-                  <th
-                    class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell"
-                  >
-                    Catégorie
-                  </th>
-                  <th
-                    class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell"
-                  >
-                    Date
-                  </th>
-                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-50">
-                @for (actu of actualites; track actu.id) {
-                  <tr class="hover:bg-slate-50 transition">
-                    <td class="px-5 py-4 font-medium text-gray-900 max-w-xs truncate">
-                      {{ actu.titre }}
-                    </td>
-                    <td class="px-5 py-4 hidden sm:table-cell">
-                      <span
-                        class="px-2.5 py-1 rounded-full text-xs font-semibold {{
-                          actu.badge_class
-                        }}"
-                      >
-                        {{ actu.categorie }}
-                      </span>
-                    </td>
-                    <td class="px-5 py-4 text-gray-500 hidden md:table-cell">{{ actu.date }}</td>
-                    <td class="px-5 py-4 text-right">
-                      <div class="flex items-center justify-end gap-2">
-                        <button
-                          (click)="openEditActu(actu)"
-                          class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100 transition"
-                        >
-                          Modifier
-                        </button>
-                        <button
-                          (click)="deleteActu(actu.id)"
-                          class="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-semibold hover:bg-red-100 transition"
-                        >
-                          Supprimer
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                }
-              </tbody>
-            </table>
-          }
-        </div>
-      </div>
-    }
-
-    <!-- ===== ONGLET DOCUMENTS ===== -->
-    @if (activeTab === 'documents') {
-      <div class="space-y-6">
-        <div class="flex items-center justify-between">
-          <div>
-            <h2 class="text-xl font-bold text-gray-900">Gestion des documents</h2>
-            <p class="text-gray-500 text-sm mt-0.5">
-              PDF téléchargeables par les citoyens (formulaires, délibérations…)
-            </p>
-          </div>
-          <button
-            (click)="showDocForm = !showDocForm"
-            class="bg-blue-800 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-blue-900 transition flex items-center gap-2"
-          >
-            <span class="text-lg leading-none">+</span> Ajouter un PDF
-          </button>
-        </div>
-
-        <!-- Formulaire upload -->
-        @if (showDocForm) {
-          <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-            <h3 class="font-bold text-gray-900 mb-5 text-lg">Ajouter un document PDF</h3>
-
-            @if (docError) {
-              <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
-                {{ docError }}
-              </div>
-            }
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1"
-                  >Nom du document *</label
-                >
-                <input
-                  [(ngModel)]="docForm.nom"
-                  type="text"
-                  class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="ex : Formulaire de naissance"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
-                <select
-                  [(ngModel)]="docForm.categorie"
-                  class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition bg-white"
-                >
-                  @for (cat of docCategories; track cat) {
-                    <option [value]="cat">{{ cat }}</option>
-                  }
-                </select>
-              </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
-                <input
-                  [(ngModel)]="docForm.description"
-                  type="text"
-                  class="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                  placeholder="Optionnel — courte description"
-                />
-              </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium text-gray-700 mb-1"
-                  >Fichier PDF * (max 10 Mo)</label
-                >
-                <input
-                  type="file"
-                  accept=".pdf"
-                  (change)="onFileChange($event)"
-                  class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-blue-50 file:text-blue-700 file:font-semibold hover:file:bg-blue-100 transition cursor-pointer"
-                />
-              </div>
-            </div>
-
-            <div class="flex gap-3 mt-5">
-              <button
-                (click)="uploadDoc()"
-                [disabled]="docLoading"
-                class="bg-blue-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-blue-900 transition disabled:opacity-60"
-              >
-                {{ docLoading ? 'Upload...' : 'Publier le document' }}
-              </button>
-              <button
-                (click)="showDocForm = false"
-                class="bg-gray-100 text-gray-700 px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-gray-200 transition"
-              >
-                Annuler
-              </button>
-            </div>
-          </div>
-        }
-
-        <!-- Tableau documents -->
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          @if (documents.length === 0) {
-            <div class="text-center py-16 text-gray-400">
-              <p class="text-lg font-semibold">Aucun document</p>
-              <p class="text-sm mt-1">Ajoutez des PDF pour les citoyens</p>
-            </div>
-          } @else {
-            <table class="w-full text-sm">
-              <thead class="bg-slate-50 border-b border-gray-100">
-                <tr>
-                  <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Nom</th>
-                  <th
-                    class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell"
-                  >
-                    Catégorie
-                  </th>
-                  <th
-                    class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell"
-                  >
-                    Taille
-                  </th>
-                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-50">
-                @for (doc of documents; track doc.id) {
-                  <tr class="hover:bg-slate-50 transition">
-                    <td class="px-5 py-4">
-                      <p class="font-medium text-gray-900 truncate max-w-xs">{{ doc.nom }}</p>
-                      @if (doc.description) {
-                        <p class="text-gray-400 text-xs mt-0.5 truncate">{{ doc.description }}</p>
-                      }
-                    </td>
-                    <td class="px-5 py-4 text-gray-500 hidden sm:table-cell">
-                      {{ doc.categorie }}
-                    </td>
-                    <td class="px-5 py-4 text-gray-500 hidden md:table-cell">
-                      {{ formatSize(doc.size) }}
-                    </td>
-                    <td class="px-5 py-4 text-right">
-                      <div class="flex items-center justify-end gap-2">
-                        <button
-                          (click)="downloadDoc(doc.id)"
-                          class="px-3 py-1.5 bg-green-50 text-green-700 rounded-lg text-xs font-semibold hover:bg-green-100 transition"
-                        >
-                          Télécharger
-                        </button>
-                        <button
-                          (click)="deleteDoc(doc.id)"
-                          class="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-semibold hover:bg-red-100 transition"
-                        >
-                          Supprimer
-                        </button>
                       </div>
                     </td>
                   </tr>
