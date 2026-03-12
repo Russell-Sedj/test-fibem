@@ -25,12 +25,13 @@ export class Home implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.title.setTitle('Mairie de Mbaling - Site Officiel');
+    this.title.setTitle('Mairie de Mbaling (FIBEM) - Site Officiel');
     this.meta.updateTag({
       name: 'description',
       content:
-        'Site officiel de la mairie de Mbaling, Sénégal. Découvrez les services municipaux, les actualités et les démarches administratives.',
+        'Site officiel de la Mairie de Mbaling - FIBEM, Sénégal. Découvrez les services municipaux, les actualités et les démarches administratives de votre commune.',
     });
+    this.meta.updateTag({ name: 'keywords', content: 'FIBEM, Mairie de Mbaling, Mbaling, commune, Sénégal, services municipaux, actualités, FIBEM Sénégal' });
     this.meta.updateTag({ property: 'og:title', content: 'Mairie de Mbaling - Site Officiel' });
     this.meta.updateTag({
       property: 'og:description',

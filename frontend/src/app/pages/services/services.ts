@@ -19,7 +19,7 @@ export class Services implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.title.setTitle('Services Municipaux - Mairie de Mbaling');
+    this.title.setTitle('Services Municipaux - FIBEM | Mairie de Mbaling');
     this.meta.updateTag({
       name: 'description',
       content:

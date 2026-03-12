@@ -30,7 +30,7 @@ export class Mairie implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.title.setTitle('La Mairie - Mairie de Mbaling');
+    this.title.setTitle('La Mairie - FIBEM | Mairie de Mbaling');
     this.meta.updateTag({
       name: 'description',
       content:

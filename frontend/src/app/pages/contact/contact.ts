@@ -42,7 +42,7 @@ export class Contact implements OnInit {
   }
 
   ngOnInit() {
-    this.title.setTitle('Nous contacter - Mairie de Mbaling');
+    this.title.setTitle('Nous contacter - FIBEM | Mairie de Mbaling');
     this.meta.updateTag({
       name: 'description',
       content:

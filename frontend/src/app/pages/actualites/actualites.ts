@@ -34,7 +34,7 @@ export class Actualites implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.title.setTitle('Actualités - Mairie de Mbaling');
+    this.title.setTitle('Actualités - FIBEM | Mairie de Mbaling');
     this.meta.updateTag({
       name: 'description',
       content:
