@@ -28,7 +28,10 @@ const angularApp = new AngularNodeAppEngine();
 /**
  * Serve static files from /browser
  */
-app.use('/api', createProxyMiddleware({
+// Use pathFilter so Express does NOT strip the /api prefix before forwarding.
+// With app.use('/api', ...), Express strips the prefix → backend 404s on /auth/login etc.
+app.use(createProxyMiddleware({
+  pathFilter: '/api',
   target: process.env['API_URL'] || 'http://localhost:3000',
   changeOrigin: true,
 }));
