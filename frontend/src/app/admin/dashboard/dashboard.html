@@ -138,18 +138,18 @@
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Titre</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Categorie</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Date</th>
-                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
+                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600 w-px whitespace-nowrap">Actions</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-50">
                 @for (actu of actualites; track actu.id) {
                   <tr class="hover:bg-slate-50 transition">
-                    <td class="px-5 py-4 font-medium text-gray-900 max-w-xs truncate">{{ actu.titre }}</td>
+                    <td class="px-5 py-4 font-medium text-gray-900"><div class="line-clamp-2 max-w-xs">{{ actu.titre }}</div></td>
                     <td class="px-5 py-4 hidden sm:table-cell">
                       <span class="px-2.5 py-1 rounded-full text-xs font-semibold {{ actu.badge_class }}">{{ actu.categorie }}</span>
                     </td>
                     <td class="px-5 py-4 text-gray-500 hidden md:table-cell">{{ actu.date }}</td>
-                    <td class="px-5 py-4 text-right">
+                    <td class="px-5 py-4 text-right w-px whitespace-nowrap">
                       <div class="flex items-center justify-end gap-2">
                         <button (click)="openEditActu(actu)" class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100 transition">Modifier</button>
                         <button (click)="deleteActu(actu.id)" class="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-semibold hover:bg-red-100 transition">Supprimer</button>
@@ -236,19 +236,19 @@
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Nom</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Role</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Responsabilite</th>
-                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
+                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600 w-px whitespace-nowrap">Actions</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-50">
                 @for (c of conseillers; track c.id) {
                   <tr class="hover:bg-slate-50 transition">
                     <td class="px-5 py-4 text-gray-400 text-xs font-mono">{{ c.ordre }}</td>
-                    <td class="px-5 py-4 font-medium text-gray-900">{{ c.nom }}</td>
+                    <td class="px-5 py-4 font-medium text-gray-900 whitespace-nowrap">{{ c.nom }}</td>
                     <td class="px-5 py-4 hidden sm:table-cell">
                       <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">{{ c.role }}</span>
                     </td>
                     <td class="px-5 py-4 text-gray-500 hidden md:table-cell max-w-xs truncate">{{ c.responsabilite }}</td>
-                    <td class="px-5 py-4 text-right">
+                    <td class="px-5 py-4 text-right w-px whitespace-nowrap">
                       <div class="flex items-center justify-end gap-2">
                         <button (click)="openEditConse(c)" class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100 transition">Modifier</button>
                         <button (click)="deleteConse(c.id)" class="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-semibold hover:bg-red-100 transition">Supprimer</button>
@@ -339,7 +339,7 @@
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600">Titre</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden sm:table-cell">Description</th>
                   <th class="text-left px-5 py-3.5 font-semibold text-gray-600 hidden md:table-cell">Details</th>
-                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600">Actions</th>
+                  <th class="text-right px-5 py-3.5 font-semibold text-gray-600 w-px whitespace-nowrap">Actions</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-50">
@@ -353,7 +353,7 @@
                     </td>
                     <td class="px-5 py-4 text-gray-500 hidden sm:table-cell max-w-xs truncate">{{ s.description }}</td>
                     <td class="px-5 py-4 text-gray-400 hidden md:table-cell text-xs">{{ s.details.length }} element(s)</td>
-                    <td class="px-5 py-4 text-right">
+                    <td class="px-5 py-4 text-right w-px whitespace-nowrap">
                       <div class="flex items-center justify-end gap-2">
                         <button (click)="openEditServ(s)" class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-xs font-semibold hover:bg-blue-100 transition">Modifier</button>
                         <button (click)="deleteServ(s.id)" class="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-xs font-semibold hover:bg-red-100 transition">Supprimer</button>
