@@ -31,7 +31,7 @@
   }
 
   .section-header {
-    @apply text-center mb-12;
+    @apply text-center mb-8 sm:mb-12;
   }
 
   .section-tag {
